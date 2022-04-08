@@ -4,7 +4,7 @@ ifeq ($(D), 1)
 	DEBUG = -g
 endif
 EXECUTABLES = $(VECTOR_EXECUTABLES)
-VECTOR_EXECUTABLES = demo_vector
+VECTOR_EXECUTABLES = demo_vector test_vector
 
 all: $(EXECUTABLES)
 

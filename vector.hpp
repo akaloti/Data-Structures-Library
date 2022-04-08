@@ -13,6 +13,7 @@ class Vector
 {
 public:
     Vector();
+    // TODO: other constructors, etc.
 
     std::size_t size() const { return mSize; }
     std::size_t capacity() const { return mCapacity; }
@@ -23,8 +24,28 @@ public:
     // TODO: move version
     // TODO: How to verify the move semantics version works?
 
+    // TODO: method for deletion, policy for shrinking capacity
+
+    /**
+     * These do NOT perform bounds checking.
+     */
     T& operator[](std::size_t i);
     const T& operator[](std::size_t i) const;
+
+    /**
+     * These DO perform bounds checking.
+     */
+    T& at(std::size_t i);
+    const T& at(std::size_t i) const;
+
+    /**
+     * Unlike with std::vector, these methods throw an exception
+     * if used on an empty container.
+     */
+    T& front();
+    const T& front() const;
+    T& back();
+    const T& back() const;
 
 private:  // helper methods
 
